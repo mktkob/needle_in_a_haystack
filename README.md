@@ -31,7 +31,7 @@ $ ffmpeg -i needle_in_a_haystack.mp4 -vcodec png -vf fps=1/60 images/image_%10d.
 \* 後から考えるとOpenCVで，画像分割も実現できたかもしれない．
 
 ## 3. "10"のモールス符号を文字列に変化する．
-窓の開閉はモールス符号のキーの打鍵状態を1，打鍵していない状態を0として表したている．
+窓の開閉はモールス符号のキーの打鍵状態を1(開)，打鍵していない状態を0(閉)として表している．
 "10"のモールス符号, e.g., `11101110111000101010001011100011101011100010111000` を，モールス符号, e.g., `- - -, ..., .-, -.-, ,-`,として解釈して，
 文字列`OSAKA` に変換できるようにする．
 
@@ -294,6 +294,7 @@ https://ja.wikipedia.org/wiki/モールス符号
 + https://qiita.com/livlea/items/a94df4667c0eb37d859f
 + https://qiita.com/ymotongpoo/items/eb9754b75606be117b70
 + http://tech.ckme.co.jp/ffmpeg_movtopics.shtml
+
 ### OpenCV
 + https://qiita.com/yori1029/items/a0ddd25c9571b28f3e1c
 
