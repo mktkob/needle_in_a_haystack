@@ -278,6 +278,7 @@ SECCON(SOMETIMES-A-SECRET-MESSAGE-BROADCAS"0110"S-BOLDLY)
 2011年以降，1アマすら電気通信術の実技試験がないので，多分この方法で1アマのモールスも解けると思います．
 
 短点と長点の2分木: 左が短点，右が長点．(例えばRは.-.)
+
 ```
 E       T
 I   A   N   M
