@@ -24,8 +24,6 @@ https://twitter.com/9SQ/status/1056439457535025152?ref_src=twsrc%5Etfw%7Ctwcamp%
 1, 3, 2の順番で実装して解答に挑む．
 
 ## 1. 動画を1分ごとの画像に分割
-https://www.dropbox.com/s/bhk0qy1mdiloh6u/needle_in_a_haystack.mp4?dl=0
-(ファイルサイズが大きくGithubにはおけなかった)
 
 ```
 $ ffmpeg -i needle_in_a_haystack.mp4 -vcodec png -vf fps=1/60 images/image_%10d.png
