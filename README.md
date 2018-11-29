@@ -26,6 +26,7 @@ https://twitter.com/9SQ/status/1056439457535025152?ref_src=twsrc%5Etfw%7Ctwcamp%
 ## 1. 動画を1分ごとの画像に分割
 https://www.dropbox.com/s/bhk0qy1mdiloh6u/needle_in_a_haystack.mp4?dl=0
 (ファイルサイズが大きくGithubにはおけなかった)
+
 ```
 $ ffmpeg -i needle_in_a_haystack.mp4 -vcodec png -vf fps=1/60 images/image_%10d.png
 ```
@@ -64,7 +65,8 @@ normal_dict = {'A': 'sl', 'B': 'lsss', 'C': 'lsls', 'D': 'lss',
 
 
 以下にコードの全体を示す．
-```
+
+``` morse.py
 class Morse:
     def __init__(self):
         self.digitdict = self.make_digitdict()
@@ -136,6 +138,7 @@ if __name__ == '__main__':
 まず，画像を切り出す方補を示す．
 Gimp等で，1分ごとの画像を確認すると，585-595, 1135-1150の画素の部分に窓があることがわかる．
 そこで，OpenCVを用いて画像を読み出して，その配列中の当該画素だけに切り出す．
+
 ```
 im = cv2.imread(file_name, 0)
 dst = im[585:595, 1135:1150]
@@ -144,6 +147,7 @@ dst = im[585:595, 1135:1150]
 切り出した画像をpythonコード内で処理するため，
 切り出した画像を保存する必要はない．
 ただ，人間が動作を確認するため，以下の様に保存する．
+
 ```
 cv2.imwrite('converted/' + file_name[7:], dst)
 ```
@@ -158,6 +162,7 @@ cv2.imwrite('converted/' + file_name[7:], dst)
 そこで，閾値の異なる3つの判別関数，`binarize`, `binarize_dawn`, `binarize_daylight`を定義した．
 
 以下に画像から窓の開閉状況を取得するpythonコード全体を示す．
+
 ``` recog_windows.py
 import numpy as np
 import glob
@@ -206,7 +211,8 @@ def import_figures(directory_name):
 
 ### 実行結果
 以下のソルバーを実行する．
-```
+
+``` solver.py
 import morse
 import recog_windows as rcg
 
@@ -224,6 +230,7 @@ if __name__ == '__main__':
 ```
 
 以下に実行結果を示す．
+
 ```
 Ubu18Vagrant575%python3 solver.py 
 ====窓の開閉====
