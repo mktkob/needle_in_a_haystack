@@ -92,6 +92,7 @@ class Morse:
                 elif letter == 'l':
                     digit_value = digit_value + '1110'
             return digit_value
+        
         for key in normal_dict:
             normal_dict[key] = ls_to_digit(normal_dict[key])
         return normal_dict
